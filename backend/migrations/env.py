@@ -6,6 +6,7 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 from sqlmodel import SQLModel
 from backend.core.config import config as cfg
+from backend.model import auth, profile
 import sys
 
 from alembic import context
