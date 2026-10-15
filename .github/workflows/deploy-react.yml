@@ -30,6 +30,7 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
+      # 💡 Step 1: Pull Vercel configurations into the GitHub runner environment
       - name: Pull Vercel Environment Info
         working-directory: frontend
         env:
@@ -38,10 +39,12 @@ jobs:
           VERCEL_PROJECT_ID: \${{ secrets.VERCEL_PROJECT_ID }}
         run: vercel pull --yes --environment=production --token=\$VERCEL_TOKEN
 
+      # 💡 Step 2: Build the app using Vercel to generate the `.vercel/output` directory
       - name: Build Application for Vercel
         working-directory: frontend
         env:
           VERCEL_TOKEN: \${{ secrets.VERCEL_TOKEN }}
+          VITE_API_URL: \${{ secrets.PROD_API_URL }}
         run: vercel build --prod --token=\$VERCEL_TOKEN
 
       # 💡 Step 3: Deploy the ready-made built folder straight to production
