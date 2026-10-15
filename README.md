@@ -207,12 +207,12 @@ migpt/
 ├── backend/
 │   ├── README.md
 │   ├── Dockerfile
+│   ├── docker-compose.dev.yml
 │   └── ...
 ├── frontend/
 │   ├── README.md
 │   ├── Dockerfile
 │   └── ...
-├── docker-compose.yml
 ├── .env.example
 ├── .gitignore
 └── README.md
