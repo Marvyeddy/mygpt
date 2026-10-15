@@ -27,19 +27,26 @@ jobs:
         working-directory: frontend
         run: npm run lint 
 
-      - name: Build application
-        working-directory: frontend
-        run: npm run build
-
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
+      - name: Pull Vercel Environment Info
+        working-directory: frontend
+        env:
+          VERCEL_TOKEN: \${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: \${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: \${{ secrets.VERCEL_PROJECT_ID }}
+        run: vercel pull --yes --environment=production --token=\$VERCEL_TOKEN
+
+      - name: Build Application for Vercel
+        working-directory: frontend
+        env:
+          VERCEL_TOKEN: \${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --prod --token=\$VERCEL_TOKEN
+
+      # 💡 Step 3: Deploy the ready-made built folder straight to production
       - name: Deploy to Vercel
         working-directory: frontend
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        run: |
-          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
-          vercel deploy --prod --prebuilt --token=$VERCEL_TOKEN
+          VERCEL_TOKEN: \${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prod --prebuilt --token=\$VERCEL_TOKEN
