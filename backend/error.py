@@ -8,6 +8,14 @@ class MyGPTException(Exception):
     """The root error exception class"""
 
 
+class UserAlreadyExists(MyGPTException):
+    """User already exists"""
+
+
+class InvalidUserCredential(MyGPTException):
+    """User credential is invalid"""
+
+
 def create_exception_handler(
     status_code: int, detail: Any
 ) -> Callable[[Request, Exception], JSONResponse]:
@@ -37,3 +45,25 @@ def require_error(app: FastAPI):
                 "error_code": "database_error",
             },
         )
+
+    app.add_exception_handler(
+        UserAlreadyExists,
+        create_exception_handler(
+            status_code=status.HTTP_409_CONFLICT,
+            detail={
+                "message": "A user with this email already exists.",
+                "error-code": "user_already_exists",
+            },
+        ),
+    )
+
+    app.add_exception_handler(
+        InvalidUserCredential,
+        create_exception_handler(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail={
+                "message": "Incorrect email, username or password.",
+                "error-code": "invalid_credentials",
+            },
+        ),
+    )

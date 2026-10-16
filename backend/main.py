@@ -2,6 +2,8 @@ from fastapi import FastAPI
 import sys
 import asyncio
 
+from backend.route.auth_route import auth_router
+
 version = "v1"
 
 if sys.platform == "win32":
@@ -32,3 +34,6 @@ app = FastAPI(
 @app.get("/")
 async def root():
     return {"message": "Hello MyGPT"}
+
+
+app.include_router(auth_router, prefix=f"/api/{version}/auth", tags=["Auth"])
