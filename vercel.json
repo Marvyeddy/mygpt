@@ -1,0 +1,4 @@
+{
+    "hasChanged": "git diff --quiet HEAD^ HEAD ./frontend"
+  }
+  
