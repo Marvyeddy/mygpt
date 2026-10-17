@@ -38,7 +38,7 @@ async def create_user(
 
     bg.add_task(
         send_email,
-        subject="Welcome to Migpt! ✨",
+        subject="Welcome to Velmio! ✨",
         recipients=[new_user.email],
         template_name="welcome.html",
         context={
