@@ -10,18 +10,18 @@ if sys.platform == "win32":
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 app = FastAPI(
-    title="MyGPT",
+    title="Velmio",
     description=(
-        "MiGPT is an AI-powered conversational platform that offers:\n"
+        "Velmio is an AI-powered conversational platform that offers:\n"
         "- Intelligent conversations\n"
         "- Persistent chat history\n"
         "- Document-based question answering using Retrieval-Augmented Generation (RAG)\n\n"
         "Technologies: FastAPI, PostgreSQL, and ChromaDB.\n"
-        "MiGPT is designed for security, scalability, and production-ready deployment."
+        "Velmio is designed for security, scalability, and production-ready deployment."
     ),
     version="1.0.0",
     contact={
-        "name": "MiGPT Support",
+        "name": "Velmio Support",
         "email": "marvelousanyatonwu4@gmail.com",
     },
     license={"name": "MIT"},
@@ -33,7 +33,7 @@ app = FastAPI(
 
 @app.get("/")
 async def root():
-    return {"message": "Hello MyGPT"}
+    return {"message": "Hello Velmio"}
 
 
 app.include_router(auth_router, prefix=f"/api/{version}/auth", tags=["Auth"])

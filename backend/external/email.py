@@ -19,7 +19,7 @@ mail = ConnectionConfig(
     MAIL_STARTTLS=True,
     MAIL_SSL_TLS=False,
     MAIL_FROM="marvelousanyatonwu4@gmail.com",
-    MAIL_FROM_NAME="MyGPT",
+    MAIL_FROM_NAME="Velmio",
     USE_CREDENTIALS=True,
     VALIDATE_CERTS=True,
 )
