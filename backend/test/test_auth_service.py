@@ -84,14 +84,8 @@ async def test_create_user(session):
         email="newuser@email.com", password="non-hashed-password", username="newuser"
     )
 
-    await auth_service.create_user(user, session)
+    response = await auth_service.create_user(user, session)
 
-    result = await session.execute(
-        select(Auth).where(Auth.email == "newuser@email.com")
-    )
-    db_user = result.unique().scalar_one_or_none()
-
-    # 3. Run your assertions against the database record
-    assert db_user is not None
-    assert db_user.email == "newuser@email.com"
-    assert db_user.password != "non-hashed-password"
+    assert response.email == "newuser@email.com"
+    assert response.password != "non-hashed-password"
+    assert response.username == "newuser"

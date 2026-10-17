@@ -37,3 +37,5 @@ class AuthService:
 
         session.add(new_user)
         await session.commit()
+
+        return new_user

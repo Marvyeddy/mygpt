@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}Welcome to Mygpt{% endblock %}
+
+{% block preheader %}
+Your Mygpt journey starts here. Get ready to explore ideas, ask questions, and discover more.
+{% endblock %}
+
+{% block content %}
+
+<p style="margin:0 0 12px; color:#7c5cdd; font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">
+    Welcome aboard
+</p>
+
+<h1 style="margin:0 0 20px; color:#20203a; font-size:30px; line-height:38px; letter-spacing:-0.8px; font-weight:700;">
+    Hello {{ first_name }} 👋
+</h1>
+
+<p style="margin:0 0 18px; color:#55576f; font-size:16px; line-height:27px;">
+    Welcome to <strong style="color:#242442;">Mygpt!</strong> We're excited to have you here.
+    You've just taken the first step toward a smarter way to explore ideas, ask questions,
+    and turn your curiosity into something meaningful.
+</p>
+
+<p style="margin:0 0 28px; color:#55576f; font-size:16px; line-height:27px;">
+    Whether you're learning something new, working through a challenging problem,
+    or exploring an idea, Mygpt is here to help you along the way.
+</p>
+
+<!-- Feature panel -->
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+       style="background-color:#f7f5ff; border:1px solid #ebe5ff; border-radius:12px; margin-bottom:28px;">
+    <tr>
+        <td style="padding:22px 20px;">
+
+            <p style="margin:0 0 16px; color:#282448; font-size:16px; line-height:24px; font-weight:700;">
+                Here's what you can look forward to
+            </p>
+
+            <p style="margin:0 0 14px; color:#55516d; font-size:14px; line-height:23px;">
+                <strong style="color:#7655d8;">01.</strong>
+                &nbsp; Ask questions and explore new ideas.
+            </p>
+
+            <p style="margin:0 0 14px; color:#55516d; font-size:14px; line-height:23px;">
+                <strong style="color:#7655d8;">02.</strong>
+                &nbsp; Have conversations that help you think things through.
+            </p>
+
+            <p style="margin:0; color:#55516d; font-size:14px; line-height:23px;">
+                <strong style="color:#7655d8;">03.</strong>
+                &nbsp; Discover new possibilities as Mygpt grows.
+            </p>
+
+        </td>
+    </tr>
+</table>
+
+<p style="margin:0 0 26px; color:#55576f; font-size:16px; line-height:27px;">
+    We're glad you're here. Your next great question could lead somewhere amazing.
+</p>
+
+<!-- CTA button -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center"
+       style="margin:0 auto 28px;">
+    <tr>
+        <td align="center" bgcolor="#7655d8" style="border-radius:9px;">
+            <a href="{{ app_url }}"
+               target="_blank"
+               style="display:inline-block; padding:15px 30px; color:#ffffff; font-size:15px; line-height:20px; font-weight:700; text-decoration:none; border-radius:9px;">
+                Explore Mygpt &rarr;
+            </a>
+        </td>
+    </tr>
+</table>
+
+<p style="margin:0; color:#77788e; font-size:14px; line-height:24px;">
+    If you didn't create a Mygpt account, you can safely ignore this email.
+</p>
+
+{% endblock %}
