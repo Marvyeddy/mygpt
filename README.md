@@ -1,8 +1,8 @@
-# Migpt
+# Velmio
 
 **An AI-powered conversational platform built for intelligent conversations, document-based question answering, and scalable AI applications.**
 
-Migpt is a production-oriented AI application inspired by modern conversational AI platforms. It is being developed with a focus on clean architecture, security, maintainability, automated testing, and cloud deployment.
+Velmio is a production-oriented AI application inspired by modern conversational AI platforms. It is being developed with a focus on clean architecture, security, maintainability, automated testing, and cloud deployment.
 
 The goal is to build an application that supports AI-powered conversations, persistent chat history, and Retrieval-Augmented Generation (RAG), allowing users to interact with their documents and retrieve contextually relevant information.
 
@@ -95,7 +95,7 @@ The exact dependencies and versions will be documented in their respective appli
 
 ## Architecture Overview
 
-Migpt is designed around separate frontend and backend applications, with supporting infrastructure for persistence, AI retrieval, caching, and background processing.
+Velmio is designed around separate frontend and backend applications, with supporting infrastructure for persistence, AI retrieval, caching, and background processing.
 
 ```text
                     ┌─────────────────────┐
@@ -203,7 +203,7 @@ The final deployment architecture will be documented once the infrastructure has
 The repository is expected to follow this general structure as development progresses:
 
 ```text
-migpt/
+velmio/
 ├── backend/
 │   ├── README.md
 │   ├── Dockerfile
@@ -222,7 +222,7 @@ The directory structure may evolve as the application grows.
 
 ## Development Philosophy
 
-Migpt is being developed with an emphasis on:
+Velmio is being developed with an emphasis on:
 
 - Clean, modular architecture.
 - Separation of concerns.
@@ -239,7 +239,7 @@ Migpt is being developed with an emphasis on:
 
 **Status:** In development.
 
-Migpt is currently in the initial environment setup and architecture stage. Features and infrastructure will be documented as they are implemented and verified.
+Velmio is currently in the initial environment setup and architecture stage. Features and infrastructure will be documented as they are implemented and verified.
 
 ## License
 
